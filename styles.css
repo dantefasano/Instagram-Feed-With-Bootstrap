@@ -1,24 +1,66 @@
-/* Estilo adicional para el cuerpo y botones */
+/* Additional Styles for Body and Buttons */
 
 .post-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .post-card {
   width: calc(33.333% - 1rem);
   box-sizing: border-box;
 }
+
 .post-card img {
   width: 100%;
   height: auto;
 }
+
 .post-card .post-info {
   padding: 10px;
 }
+
 .centered-btns {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 20px;
+}
+
+/* Grid View posts will have the same size (300 x 300 px) and shape (square) */
+.post-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+}
+
+.row .col {
+  padding: 2px;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 576px) {
+  .row-cols-3 {
+    row-gap: 10px;
+  }
+}
+
+/* Adjustments for larger screens (Desktop) */
+@media (min-width: 992px) {
+  /* Ensure the grid has 3 columns in larger screens */
+  .row-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .row .col {
+    padding: 2px;
+  }
+
+  /* Force the images to remain 300x300px in desktop view */
+  .post-image {
+    width: 300px;
+    height: 300px;
+  }
 }
